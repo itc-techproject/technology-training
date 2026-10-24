@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - Technology Training ITC</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <div class="nav-logo"><img src="images/itc.PNG" alt="ITC Logo" class="logo-img"/></div>
+        <div class="nav-title"><span class="nav-title-main">TECHNOLOGY TRAINING</span><span class="nav-title-sub">UKM ITC MIPA UNSOED</span></div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="history.html">HISTORY</a></li>
+        <li><a href="contact.html" class="nav-active">CONTACT</a></li>
+        <li><a href="store.html">STORE</a></li>
+        <li><a href="https://itcmipaunsoed.my.id/Tetra/Pendaftaran" target="_blank" class="btn-register">REGISTER</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+    </div>
+  </nav>
+
+  <main class="contact-page">
+    <div class="section-container">
+      <section class="contact-section">
+        <h1 class="contact-title">CONTACT PERSON</h1>
+
+        <div class="contact-info-cards">
+          <!-- Kartu 1: PO TETRA -->
+          <div class="contact-info-card">
+            <div class="contact-avatar"><i class="fas fa-user"></i></div>
+            <div class="contact-info-text">
+              <span class="contact-label">NOMOR PO TETRA</span>
+              <span class="contact-number">081234567890</span>
+            </div>
+          </div>
+
+          <!-- Kartu 2: SC TETRA -->
+          <div class="contact-info-card">
+            <div class="contact-avatar"><i class="fas fa-user"></i></div>
+            <div class="contact-info-text">
+              <span class="contact-label">NOMOR SC TETRA</span>
+              <span class="contact-number">081234567890</span>
+            </div>
+          </div>
+
+          <!-- Kartu 3: EMAIL ITC -->
+          <div class="contact-info-card">
+            <div class="contact-avatar"><i class="fas fa-envelope"></i></div>
+            <div class="contact-info-text">
+              <span class="contact-label">EMAIL ITC</span>
+              <span class="contact-number">@itcmipaunsoed.my.id</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">NAME</label>
+              <input type="text" id="name" placeholder="Masukkan nama" required/>
+            </div>
+            <div class="form-group">
+              <label for="phone">PHONE</label>
+              <input type="tel" id="phone" placeholder="Masukkan telepon" required/>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">EMAIL</label>
+              <input type="email" id="email" placeholder="Masukkan email" required/>
+            </div>
+            <div class="form-group">
+              <label for="subject">SUBJECT</label>
+              <input type="text" id="subject" placeholder="Masukkan subject" required/>
+            </div>
+          </div>
+          <div class="form-group full-width">
+            <label for="message">MESSAGE</label>
+            <textarea id="message" rows="5" placeholder="Pesanmu..." required></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn-submit"><span>Kirim Pesan</span><i class="fas fa-paper-plane"></i></button>
+          </div>
+        </form>
+        <div class="toast" id="toast"><i class="fas fa-check-circle"></i> Pesan terkirim!</div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="section-container">
+      <div class="footer-card">
+        <div class="footer-top">
+          <div class="footer-logos">
+            <img src="images/Unsoed.PNG" alt="UNSOED Logo" class="footer-logo"/>
+            <img src="images/itc.PNG" alt="ITC Logo" class="footer-logo"/>
+            <img src="images/logotetra.png" alt="TETRA Logo" class="footer-logo"/>
+          </div>
+          <div class="footer-divider"></div>
+          <div class="footer-title"><h2>TECHNOLOGY<br/>TRAINING 2026</h2></div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 All Rights Reserved By <a href="#">Divisi Teknologi</a></p>
+          <div class="footer-social"><i class="fab fa-instagram instagram-icon"></i><span>@technologytraining.unsoed</span></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/contact.js"></script>
+</body>
+</html>
