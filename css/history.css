@@ -1,0 +1,12 @@
+/* history.css */
+.history-page { padding: 60px 0 80px; }
+.history-header { text-align: center; margin-bottom: 48px; }
+.btn-tag { background: var(--figma-grad-horiz); color: var(--white); border: none; padding: 10px 24px; border-radius: 6px; font-weight: 700; margin-bottom: 12px; }
+.history-title { font-size: clamp(28px, 4vw, 42px); font-weight: 900; background: var(--figma-grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.history-subtitle { font-size: 14px; color: var(--text-muted); max-width: 500px; margin: 0 auto; }
+
+.history-timeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 960px; margin: 0 auto; }
+.history-card { background: var(--card-bg); border: 1px solid var(--card-border); border-left: 4px solid var(--pink-mid); border-radius: 14px; padding: 28px 24px; backdrop-filter: blur(8px); }
+.history-year { font-size: 20px; font-weight: 900; color: var(--gold-accent); margin-bottom: 8px; }
+.history-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.history-card p { font-size: 13px; color: var(--text-muted); }

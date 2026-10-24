@@ -1,0 +1,15 @@
+/* store.css */
+.store-page { padding: 60px 0 80px; }
+.store-header { text-align: center; margin-bottom: 48px; }
+.btn-tag { background: var(--figma-grad-horiz); color: var(--white); border: none; padding: 10px 24px; border-radius: 6px; font-weight: 700; margin-bottom: 12px; }
+.store-title { font-size: clamp(28px, 4vw, 42px); font-weight: 900; background: var(--figma-grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.store-subtitle { font-size: 14px; color: var(--text-muted); max-width: 500px; margin: 0 auto; }
+
+.store-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; }
+.store-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; overflow: hidden; backdrop-filter: blur(8px); }
+.store-card-img { height: 180px; background: rgba(255, 255, 255, 0.04); display: flex; align-items: center; justify-content: center; font-size: 60px; color: var(--pink-mid); }
+.store-card-body { padding: 24px; text-align: center; }
+.store-card-body h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.store-card-body .price { font-size: 15px; font-weight: 700; color: var(--gold-accent); margin-bottom: 16px; }
+
+.btn-store { background: var(--figma-grad); color: var(--white); padding: 10px 24px; border-radius: 8px; font-weight: 700; text-decoration: none; display: inline-block; width: 100%; box-sizing: border-box; }
