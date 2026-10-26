@@ -156,23 +156,93 @@
 }
 
 .tetra-logo-wrapper {
-  width: 280px;
-  height: 280px;
+  position: relative;
+  width: min(100%, 440px);
+  height: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: drop-shadow(0 12px 30px rgba(199, 112, 154, 0.35));
-  transition: transform 0.4s ease;
+  isolation: isolate;
 }
 
-.tetra-logo-wrapper:hover {
-  transform: scale(1.05);
+.tetra-logo-glow {
+  position: absolute;
+  z-index: -1;
+  width: 55%;
+  height: 68%;
+  border-radius: 50%;
+  background: rgba(199, 112, 154, 0.22);
+  filter: blur(50px);
+}
+
+.tetra-logo-orbit {
+  position: absolute;
+  z-index: -1;
+  width: 86%;
+  height: 70%;
+  transform: rotate(-15deg);
+  border: 1px solid rgba(249, 219, 120, 0.19);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.tetra-logo-orbit-two {
+  width: 94%;
+  height: 82%;
+  transform: rotate(18deg);
+  border-color: rgba(255, 255, 255, 0.13);
 }
 
 .tetra-logo {
-  max-width: 100%;
-  max-height: 100%;
+  position: relative;
+  z-index: 1;
+  width: min(60%, 250px);
+  max-height: 80%;
   object-fit: contain;
+  filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.38));
+  animation: tetra-logo-float 5s ease-in-out infinite;
+}
+
+.tetra-logo-badge,
+.tetra-logo-caption {
+  position: absolute;
+  z-index: 2;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.tetra-logo-badge {
+  top: 32px;
+  left: 3px;
+  padding: 10px 14px;
+  transform: rotate(-7deg);
+  border-radius: 30px;
+  background: var(--figma-grad-horiz);
+  color: #24171d;
+  font-size: 9px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+}
+
+.tetra-logo-badge i {
+  margin-right: 6px;
+}
+
+.tetra-logo-caption {
+  right: 0;
+  bottom: 28px;
+  padding: 12px 16px;
+  border: 1px solid var(--card-border);
+  border-radius: 11px;
+  background: rgba(27, 21, 21, 0.86);
+  color: var(--white);
+  font-size: 10px;
+  line-height: 1.6;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes tetra-logo-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
 }
 
 .about-right {
@@ -489,7 +559,13 @@
   .hero-content,
   .about-right,
   .speaker-info {
-    max-width: 100%;
+    max-    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tetra-logo {
+    animation: none;
   }
 
   .hero-buttons {
@@ -540,8 +616,18 @@
   }
 
   .tetra-logo-wrapper {
-    width: 220px;
-    height: 220px;
+    width: min(100%, 380px);
+    height: 300px;
+  }
+
+  .tetra-logo-badge {
+    top: 22px;
+    left: 4px;
+  }
+
+  .tetra-logo-caption {
+    right: 2px;
+    bottom: 18px;
   }
 
   .tech-cards {
