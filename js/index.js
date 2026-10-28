@@ -19,6 +19,31 @@ if (mascotImages.length > 1) {
   }, 3500);
 }
 
+// Benefit event photo slideshow
+const benefitPhotos = document.querySelectorAll('.benefit-gallery img');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (benefitPhotos.length > 1 && !prefersReducedMotion) {
+  let currentPhotoIndex = 0;
+  setInterval(() => {
+    const leavingPhoto = benefitPhotos[currentPhotoIndex];
+    leavingPhoto.classList.remove('is-active', 'is-next', 'is-third');
+    leavingPhoto.classList.add('is-leaving');
+    leavingPhoto.setAttribute('aria-hidden', 'true');
+    window.setTimeout(() => leavingPhoto.classList.remove('is-leaving'), 700);
+
+    currentPhotoIndex = (currentPhotoIndex + 1) % benefitPhotos.length;
+    benefitPhotos.forEach((photo) => {
+      photo.classList.remove('is-active', 'is-next', 'is-third');
+      photo.setAttribute('aria-hidden', 'true');
+    });
+
+    benefitPhotos[currentPhotoIndex].classList.add('is-active');
+    benefitPhotos[currentPhotoIndex].removeAttribute('aria-hidden');
+    benefitPhotos[(currentPhotoIndex + 1) % benefitPhotos.length].classList.add('is-next');
+    benefitPhotos[(currentPhotoIndex + 2) % benefitPhotos.length].classList.add('is-third');
+  }, 4000);
+}
+
 // TETRA topic selector
 const techExplorer = document.getElementById('tech-explorer');
 if (techExplorer) {

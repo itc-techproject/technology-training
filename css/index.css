@@ -271,6 +271,87 @@
   max-width: 600px;
 }
 
+.event-format {
+  padding: 0 0 70px;
+}
+
+.event-format-heading {
+  margin-bottom: 24px;
+  color: var(--gold-accent);
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+
+.event-format-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.event-format-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 18px 22px;
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025));
+  text-align: left;
+}
+
+.event-format-icon {
+  display: grid;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(199, 112, 154, 0.16);
+  color: var(--gold-accent);
+  font-size: 19px;
+}
+
+.event-format-text {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.event-format-label {
+  margin: 0;
+  color: var(--gold-accent);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+}
+
+.event-format-card h3 {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.event-format-location {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.event-format-location:hover,
+.event-format-location:focus-visible {
+  color: var(--gold-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 /* ---- Tema TETRA 2026 Section ---- */
 .tema-section {
   padding: 70px 0;
@@ -856,6 +937,127 @@
   filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.35));
 }
 
+.benefit-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(32px, 6vw, 72px);
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 70px;
+}
+
+.benefit-content {
+  min-width: 0;
+}
+
+.benefit-gallery {
+  position: relative;
+  align-self: center;
+  justify-self: center;
+  width: min(100%, 360px);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.benefit-gallery img {
+  display: block;
+  position: absolute;
+  top: 6%;
+  left: 3%;
+  width: 88%;
+  height: 88%;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  background: var(--bg-dark);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+  object-fit: cover;
+  opacity: 0;
+  transform: translate(64px, 30px) scale(0.82);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.benefit-gallery img.is-third {
+  z-index: 1;
+  opacity: 0.65;
+  transform: translate(40px, 20px) scale(0.88);
+}
+
+.benefit-gallery img.is-next {
+  z-index: 2;
+  opacity: 0.85;
+  transform: translate(20px, 10px) scale(0.94);
+}
+
+.benefit-gallery img.is-active {
+  z-index: 3;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.benefit-gallery img.is-leaving {
+  z-index: 4;
+  opacity: 0;
+  transform: translateX(110%) rotate(5deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .benefit-gallery img {
+    transition: none;
+  }
+
+  .benefit-gallery img.is-leaving {
+    display: none;
+  }
+}
+
+.benefit-heading {
+  margin-bottom: 26px;
+  text-align: center;
+}
+
+.benefit-heading h2 {
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 900;
+}
+
+.benefit-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.benefit-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 68px;
+  padding: 14px 18px;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025));
+  text-align: left;
+}
+
+.benefit-card i {
+  flex: 0 0 22px;
+  color: var(--gold-accent);
+  font-size: 20px;
+}
+
+.benefit-card h3 {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .benefit-section {
+    grid-template-columns: 1fr;
+  }
+
+  .benefit-gallery {
+    transform: none;
+  }
+}
+
 .partner-section {
   display: flex;
   flex-direction: column;
@@ -912,7 +1114,7 @@
 
 .partner-marquee-reverse .partner-track {
   animation-direction: reverse;
-  animation-duration: 39s;
+  animation-duration: 70s;
 }
 
 .partner-set {
@@ -943,12 +1145,31 @@
 }
 
 .partner-logo {
-  width: calc(100% - 24px);
-  max-height: 48px;
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
   object-fit: contain;
-  padding: 3px 6px;
-  border-radius: 4px;
-  background: #fff;
+}
+
+.partner-logo[src*="Himasta.png"],
+.partner-logo[src*="Himabisi%20KIPK%20Unsoed.png"],
+.partner-logo[src*="HIMESBANG.png"],
+.partner-logo[src*="HIMA_MIKROBIOLOGI_page-0001-removebg-preview.png"],
+.partner-logo[src*="Logo%20KBMS.png"],
+.partner-logo[src*="LOGO%20HIMAPOL.png"] {
+  width: 64px;
+  height: 64px;
+  flex-basis: 64px;
+}
+
+.sponsor-logo {
+  width: 120px;
+  height: 52px;
+  flex-basis: 52px;
+}
+
+.sponsor-logo[src*="bocahnyanteng.png"] {
+  object-fit: cover;
 }
 
 .partner-item span {
@@ -976,6 +1197,79 @@
   .partner-track {
     animation: none;
   }
+}
+
+.faq-section {
+  max-width: 856px;
+  padding-bottom: 70px;
+}
+
+.faq-heading,
+.faq-subheading {
+  text-align: center;
+}
+
+.faq-heading {
+  color: var(--gold-accent);
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.faq-subheading {
+  margin: 4px 0 28px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.faq-list {
+  display: grid;
+  gap: 12px;
+}
+
+.faq-item {
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025));
+}
+
+.faq-item summary {
+  position: relative;
+  padding: 18px 52px 18px 20px;
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  color: var(--gold-accent);
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  content: "";
+  transform: translateY(-70%) rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.faq-item[open] summary::after {
+  transform: translateY(-30%) rotate(225deg);
+}
+
+.faq-item p {
+  padding: 0 20px 18px;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.7;
 }
 
 /* ---- Responsive Adjustments ---- */
@@ -1023,6 +1317,10 @@
 }
 
 @media (max-width: 768px) {
+  .event-format-card {
+    justify-content: center;
+  }
+
   .po-content {
     flex-direction: column-reverse;
     text-align: center;
@@ -1078,6 +1376,30 @@
 }
 
 @media (max-width: 480px) {
+  .event-format-card {
+    padding: 18px 12px;
+  }
+
+  .event-format-icon {
+    display: none;
+  }
+
+  .event-format-text {
+    gap: 7px;
+  }
+
+  .event-format-card h3 {
+    font-size: 17px;
+  }
+
+  .event-format-label {
+    font-size: 14px;
+  }
+
+  .event-format-location {
+    font-size: 13px;
+  }
+
   .hero-title {
     font-size: 34px;
   }
