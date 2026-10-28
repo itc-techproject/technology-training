@@ -166,15 +166,17 @@ main {
 }
 
 .footer .section-container {
-  max-width: var(--max-width);
-  padding: 0 24px;
+  max-width: none;
+  padding: 0;
 }
 
 .footer-card {
   background: linear-gradient(135deg, rgba(149, 51, 166, 0.6) 0%, rgba(199, 112, 154, 0.4) 50%, rgba(20, 15, 15, 0.95) 100%);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-bottom: none;
-  border-radius: 20px 20px 0 0;
+  border-right: 0;
+  border-left: 0;
+  border-radius: 0;
   padding: 32px 48px 24px;
   box-shadow: 0 -10px 40px rgba(149, 51, 166, 0.25);
   backdrop-filter: blur(10px);

@@ -72,24 +72,86 @@
     <section class="tema-section" id="tema">
       <div class="section-container">
         <div class="tema-header"><h2>TEMA TETRA 2026</h2></div>
-        <div class="tema-tags">
-          <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JAVASCRIPT</span>
-        </div>
-        <p class="tema-for">for</p>
+        <p class="tema-for">Pilih elemen untuk melihat perannya dalam</p>
         <div class="tema-webdev"><span class="tag tag-webdev">WEB DEVELOPMENT</span></div>
 
-        <div class="tech-cards">
-          <div class="tech-card">
-            <div class="tech-card-icon html-icon"><span>HTML</span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"/></div>
-            <p>Kerangka dasar pembangun struktur halaman website.</p>
+        <div class="tech-explorer" id="tech-explorer">
+          <div class="tech-wheel-panel">
+            <div class="tech-carousel" role="group" aria-label="Pilih materi web development">
+              <div class="tech-wheel">
+                <span class="tech-wheel-ring tech-wheel-ring-outer" aria-hidden="true"></span>
+                <span class="tech-wheel-ring tech-wheel-ring-inner" aria-hidden="true"></span>
+                <div class="tech-wheel-core" aria-hidden="true">
+                  <i class="fas fa-code"></i>
+                  <span>JELAJAHI<br/>MATERI</span>
+                </div>
+                <button class="tech-choice is-active" type="button" data-tech-index="0" aria-pressed="true" aria-label="Pilih HTML">
+                  <span class="tech-card-icon html-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt=""/></span>
+                  <span class="tech-choice-name">HTML</span>
+                </button>
+                <button class="tech-choice" type="button" data-tech-index="1" aria-pressed="false" aria-label="Pilih CSS">
+                  <span class="tech-card-icon css-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt=""/></span>
+                  <span class="tech-choice-name">CSS</span>
+                </button>
+                <button class="tech-choice" type="button" data-tech-index="2" aria-pressed="false" aria-label="Pilih JavaScript">
+                  <span class="tech-card-icon js-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt=""/></span>
+                  <span class="tech-choice-name">JAVASCRIPT</span>
+                </button>
+              </div>
+              <div class="tech-controls">
+                <button class="tech-arrow" type="button" data-tech-direction="-1" aria-label="Materi sebelumnya">
+                  <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <span class="tech-position" aria-live="polite">01 / 03</span>
+                <button class="tech-arrow" type="button" data-tech-direction="1" aria-label="Materi berikutnya">
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+            <p class="tech-hint">Scroll, klik ikon, atau gunakan panah</p>
           </div>
-          <div class="tech-card">
-            <div class="tech-card-icon css-icon"><span>CSS</span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"/></div>
-            <p>Penata gaya yang mengontrol desain dan tata letak visual website.</p>
-          </div>
-          <div class="tech-card">
-            <div class="tech-card-icon js-icon"><span>JS</span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"/></div>
-            <p>Elemen logika yang membuat website menjadi interaktif dan dinamis.</p>
+
+          <div class="tech-detail" aria-live="polite">
+            <div class="tech-panel" data-tech-panel="0">
+              <div class="tech-panel-copy">
+                <span class="tech-panel-kicker">01 / STRUKTUR</span>
+                <h3>HTML menyusun isi halaman</h3>
+                <p>Judul, teks, dan gambar dimulai dari struktur yang dibuat dengan HTML.</p>
+              </div>
+              <div class="tech-demo html-demo" aria-label="Contoh struktur halaman HTML">
+                <span class="demo-window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span class="demo-code-line"><span>&lt;h1&gt;</span>Halo, dunia!<span>&lt;/h1&gt;</span></span>
+                <span class="demo-code-line"><span>&lt;p&gt;</span>Ini sebuah paragraf.<span>&lt;/p&gt;</span></span>
+              </div>
+            </div>
+            <div class="tech-panel" data-tech-panel="1" hidden>
+              <div class="tech-panel-copy">
+                <span class="tech-panel-kicker">02 / TAMPILAN</span>
+                <h3>CSS memberi gaya pada halaman</h3>
+                <p>Atur warna, jarak, dan tata letak agar halaman tampil sesuai desain.</p>
+              </div>
+              <div class="tech-demo css-demo">
+                <span class="demo-window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                <button class="demo-style-button" type="button">Coba ubah gaya</button>
+                <span class="demo-style-status">Klik untuk menerapkan gaya CSS</span>
+              </div>
+            </div>
+            <div class="tech-panel" data-tech-panel="2" hidden>
+              <div class="tech-panel-copy">
+                <span class="tech-panel-kicker">03 / INTERAKSI</span>
+                <h3>JavaScript membuat halaman hidup</h3>
+                <p>Tambahkan aksi dan respons saat pengunjung berinteraksi dengan halaman.</p>
+              </div>
+              <div class="tech-demo js-demo">
+                <span class="demo-window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                <div class="demo-counter">
+                  <span class="demo-counter-label">JUMLAH KLIK</span>
+                  <strong class="demo-click-count">0</strong>
+                </div>
+                <button class="demo-click-button" type="button">Klik aku <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+                <span class="demo-click-status">Interaksi akan muncul di sini</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -115,14 +177,56 @@
             <img src="image/potetra26.png" alt="Sri Utami Desi Setyawati - Project Officer TETRA 2026" class="speaker-img"/>
           </div>
         </div>
+      </div>
 
-        <div class="sponsor-section">
-          <button class="btn-tag">SPONSOR</button>
-          <div class="sponsor-grid">
-            <div class="sponsor-item"></div><div class="sponsor-item"></div><div class="sponsor-item"></div>
-            <div class="sponsor-item"></div><div class="sponsor-item"></div><div class="sponsor-item"></div>
+      <div class="partner-section">
+          <div class="partner-group">
+            <h2 class="btn-tag">SPONSOR</h2>
+            <div class="partner-marquee" aria-label="Logo sponsor bergerak otomatis">
+              <div class="partner-track">
+                <div class="partner-set">
+                  <div class="partner-item"><i class="fas fa-handshake" aria-hidden="true"></i><span>LOGO SPONSOR 01</span></div>
+                  <div class="partner-item"><i class="fas fa-handshake" aria-hidden="true"></i><span>LOGO SPONSOR 02</span></div>
+                  <div class="partner-item"><i class="fas fa-handshake" aria-hidden="true"></i><span>LOGO SPONSOR 03</span></div>
+                  <div class="partner-item"><i class="fas fa-handshake" aria-hidden="true"></i><span>LOGO SPONSOR 04</span></div>
+                  <div class="partner-item"><i class="fas fa-handshake" aria-hidden="true"></i><span>LOGO SPONSOR 05</span></div>
+                  <div class="partner-item"><i class="fas fa-handshake" aria-hidden="true"></i><span>LOGO SPONSOR 06</span></div>
+                </div>
+                <div class="partner-set" aria-hidden="true">
+                  <div class="partner-item"><i class="fas fa-handshake"></i><span>LOGO SPONSOR 01</span></div>
+                  <div class="partner-item"><i class="fas fa-handshake"></i><span>LOGO SPONSOR 02</span></div>
+                  <div class="partner-item"><i class="fas fa-handshake"></i><span>LOGO SPONSOR 03</span></div>
+                  <div class="partner-item"><i class="fas fa-handshake"></i><span>LOGO SPONSOR 04</span></div>
+                  <div class="partner-item"><i class="fas fa-handshake"></i><span>LOGO SPONSOR 05</span></div>
+                  <div class="partner-item"><i class="fas fa-handshake"></i><span>LOGO SPONSOR 06</span></div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+
+          <div class="partner-group">
+            <h2 class="btn-tag">MEDIA PARTNER</h2>
+            <div class="partner-marquee partner-marquee-reverse" aria-label="Logo media partner bergerak otomatis">
+              <div class="partner-track">
+                <div class="partner-set">
+                  <div class="partner-item"><i class="fas fa-newspaper" aria-hidden="true"></i><span>LOGO MEDIA 01</span></div>
+                  <div class="partner-item"><i class="fas fa-newspaper" aria-hidden="true"></i><span>LOGO MEDIA 02</span></div>
+                  <div class="partner-item"><i class="fas fa-newspaper" aria-hidden="true"></i><span>LOGO MEDIA 03</span></div>
+                  <div class="partner-item"><i class="fas fa-newspaper" aria-hidden="true"></i><span>LOGO MEDIA 04</span></div>
+                  <div class="partner-item"><i class="fas fa-newspaper" aria-hidden="true"></i><span>LOGO MEDIA 05</span></div>
+                  <div class="partner-item"><i class="fas fa-newspaper" aria-hidden="true"></i><span>LOGO MEDIA 06</span></div>
+                </div>
+                <div class="partner-set" aria-hidden="true">
+                  <div class="partner-item"><i class="fas fa-newspaper"></i><span>LOGO MEDIA 01</span></div>
+                  <div class="partner-item"><i class="fas fa-newspaper"></i><span>LOGO MEDIA 02</span></div>
+                  <div class="partner-item"><i class="fas fa-newspaper"></i><span>LOGO MEDIA 03</span></div>
+                  <div class="partner-item"><i class="fas fa-newspaper"></i><span>LOGO MEDIA 04</span></div>
+                  <div class="partner-item"><i class="fas fa-newspaper"></i><span>LOGO MEDIA 05</span></div>
+                  <div class="partner-item"><i class="fas fa-newspaper"></i><span>LOGO MEDIA 06</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
     </section>
   </main>
