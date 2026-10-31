@@ -6,7 +6,7 @@
   <meta name="description" content="Timeline perjalanan Technology Training (TETRA) UKM ITC MIPA UNSOED dari tahun 2022."/>
   <title>History - Technology Training ITC</title>
   <link rel="stylesheet" href="css/global.css" />
-  <link rel="stylesheet" href="css/history.css?v=7" />
+  <link rel="stylesheet" href="css/history.css?v=10" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
@@ -38,51 +38,42 @@
       <a class="history-jump" href="#timeline">Jelajahi timeline <i class="fas fa-arrow-down"></i></a>
     </section>
 
-    <section class="history-timeline section-container" id="timeline" aria-label="Timeline perjalanan TETRA">
-      <article class="history-entry">
-        <div class="history-card">
-          <div class="history-card-top"><span class="history-category">AWAL PERJALANAN</span><span class="history-edition">TETRA · 01</span></div>
-          <h2 class="history-card-title">Awal perjalanan TETRA</h2>
-          <p class="history-card-description">Klik tahun untuk melihat cerita dan ketersediaan dokumentasi.</p>
+    <section class="history-timeline section-container" id="timeline" aria-label="Dokumentasi TETRA per tahun">
+      <div class="history-map">
+        <div class="history-map-heading">
+          <span class="history-map-label"><i class="fas fa-map" aria-hidden="true"></i> PETA PERJALANAN</span>
+          <p>Ikuti jejak TETRA dari tahun ke tahun</p>
         </div>
-        <div class="history-marker"><button class="history-year-button" type="button" data-year="2022" data-edition="TETRA · 01" data-story="Informasi perjalanan TETRA tahun ini akan ditambahkan setelah detail sejarah dikonfirmasi." data-archive="Dokumentasi foto dan video TETRA 2022 belum tersedia." aria-haspopup="dialog" aria-controls="history-dialog">2022</button></div>
-      </article>
-
-      <article class="history-entry">
-        <div class="history-card">
-          <div class="history-card-top"><span class="history-category">PERJALANAN BERLANJUT</span><span class="history-edition">TETRA · 02</span></div>
-          <h2 class="history-card-title">TETRA terus bertumbuh</h2>
-          <p class="history-card-description">Klik tahun untuk melihat cerita dan ketersediaan dokumentasi.</p>
-        </div>
-        <div class="history-marker"><button class="history-year-button" type="button" data-year="2023" data-edition="TETRA · 02" data-story="Informasi perjalanan TETRA tahun ini akan ditambahkan setelah detail sejarah dikonfirmasi." data-archive="Dokumentasi foto dan video TETRA 2023 belum tersedia." aria-haspopup="dialog" aria-controls="history-dialog">2023</button></div>
-      </article>
-
-      <article class="history-entry">
-        <div class="history-card">
-          <div class="history-card-top"><span class="history-category">CERITA TAHUN INI</span><span class="history-edition">TETRA · 03</span></div>
-          <h2 class="history-card-title">Langkah berikutnya</h2>
-          <p class="history-card-description">Klik tahun untuk melihat cerita dan ketersediaan dokumentasi.</p>
-        </div>
-        <div class="history-marker"><button class="history-year-button" type="button" data-year="2024" data-edition="TETRA · 03" data-story="Informasi perjalanan TETRA tahun ini akan ditambahkan setelah detail sejarah dikonfirmasi." data-archive="Dokumentasi TETRA 2024 belum ditambahkan ke halaman ini." aria-haspopup="dialog" aria-controls="history-dialog">2024</button></div>
-      </article>
-
-      <article class="history-entry">
-        <div class="history-card">
-          <div class="history-card-top"><span class="history-category">MOMEN BERIKUTNYA</span><span class="history-edition">TETRA · 04</span></div>
-          <h2 class="history-card-title">Momen yang berkesan</h2>
-          <p class="history-card-description">Klik tahun untuk melihat cerita dan ketersediaan dokumentasi.</p>
-        </div>
-        <div class="history-marker"><button class="history-year-button" type="button" data-year="2025" data-edition="TETRA · 04" data-story="Informasi perjalanan TETRA tahun ini akan ditambahkan setelah detail sejarah dikonfirmasi." data-archive="Dokumentasi TETRA 2025 belum ditambahkan ke halaman ini." aria-haspopup="dialog" aria-controls="history-dialog">2025</button></div>
-      </article>
-
-      <article class="history-entry">
-        <div class="history-card">
-          <div class="history-card-top"><span class="history-category">PERJALANAN BERLANJUT</span><span class="history-edition">TETRA · 05</span></div>
-          <h2 class="history-card-title">Perjalanan terus berlanjut</h2>
-          <p class="history-card-description">Klik tahun untuk melihat cerita dan ketersediaan dokumentasi.</p>
-        </div>
-        <div class="history-marker"><button class="history-year-button" type="button" data-year="2026" data-edition="TETRA · 05" data-story="Informasi perjalanan TETRA tahun ini akan ditambahkan setelah detail sejarah dikonfirmasi." data-archive="Dokumentasi TETRA 2026 belum ditambahkan ke halaman ini." aria-haspopup="dialog" aria-controls="history-dialog">2026</button></div>
-      </article>
+        <svg class="history-route" viewBox="0 0 800 940" preserveAspectRatio="none" aria-hidden="true">
+          <path class="history-route-shadow" d="M130 810 C100 735 370 790 400 710 S150 650 250 560 S480 620 590 435 S220 350 450 275 S660 240 580 120"/>
+          <path class="history-route-road" d="M130 810 C100 735 370 790 400 710 S150 650 250 560 S480 620 590 435 S220 350 450 275 S660 240 580 120"/>
+          <path class="history-route-center" d="M130 810 C100 735 370 790 400 710 S150 650 250 560 S480 620 590 435 S220 350 450 275 S660 240 580 120"/>
+        </svg>
+        <ol class="history-stops" aria-label="Pilih tahun dokumentasi">
+          <li class="history-stop history-stop-2022">
+            <span class="history-stop-caption">EDISI PERTAMA</span>
+            <button class="history-year-button" type="button" data-year="2022" data-edition="TETRA · 01" aria-haspopup="dialog" aria-controls="history-dialog"><span>2022</span><i class="fas fa-camera" aria-hidden="true"></i></button>
+          </li>
+          <li class="history-stop history-stop-2023">
+            <span class="history-stop-caption">TERUS BERTUMBUH</span>
+            <button class="history-year-button" type="button" data-year="2023" data-edition="TETRA · 02" aria-haspopup="dialog" aria-controls="history-dialog"><span>2023</span><i class="fas fa-camera" aria-hidden="true"></i></button>
+          </li>
+          <li class="history-stop history-stop-2024">
+            <span class="history-stop-caption">LANGKAH BERIKUTNYA</span>
+            <button class="history-year-button" type="button" data-year="2024" data-edition="TETRA · 03" aria-haspopup="dialog" aria-controls="history-dialog"><span>2024</span><i class="fas fa-camera" aria-hidden="true"></i></button>
+          </li>
+          <li class="history-stop history-stop-2025">
+            <span class="history-stop-caption">MOMEN BERKESAN</span>
+            <button class="history-year-button" type="button" data-year="2025" data-edition="TETRA · 04" aria-haspopup="dialog" aria-controls="history-dialog"><span>2025</span><i class="fas fa-camera" aria-hidden="true"></i></button>
+          </li>
+          <li class="history-stop history-stop-2026">
+            <span class="history-stop-caption">PERJALANAN BERLANJUT</span>
+            <button class="history-year-button" type="button" data-year="2026" data-edition="TETRA · 05" aria-haspopup="dialog" aria-controls="history-dialog"><span>2026</span><i class="fas fa-camera" aria-hidden="true"></i></button>
+          </li>
+        </ol>
+        <span class="history-map-period">TETRA · 2022—2026</span>
+      </div>
+      <p class="history-carousel-hint"><i class="fas fa-hand-pointer" aria-hidden="true"></i> Tekan titik tahun untuk melihat foto dokumentasi.</p>
     </section>
 
     <dialog class="history-dialog" id="history-dialog" aria-labelledby="history-dialog-title">
@@ -93,23 +84,19 @@
         <p class="history-dialog-story" id="history-dialog-story"></p>
         <div class="history-dialog-archive">
           <div class="history-dialog-archive-heading">
-            <h3><i class="fas fa-photo-film" aria-hidden="true"></i> Template dokumentasi</h3>
+            <h3><i class="fas fa-photo-film" aria-hidden="true"></i> Dokumentasi kegiatan</h3>
             <p id="history-dialog-archive" aria-live="polite"></p>
           </div>
-          <div class="history-dialog-gallery" id="history-dialog-gallery" aria-label="Template slot dokumentasi"></div>
+          <div class="history-photo-carousel" id="history-photo-carousel" aria-label="Galeri foto TETRA">
+            <div class="history-photo-viewport">
+              <div class="history-dialog-gallery" id="history-dialog-gallery"></div>
+            </div>
+          </div>
+          <p class="history-photo-status">Foto bergeser otomatis ke kiri · Arahkan kursor ke foto untuk menjeda.</p>
         </div>
       </div>
     </dialog>
 
-    <template id="history-gallery-template">
-      <figure class="history-gallery-slot">
-        <div class="history-gallery-placeholder">
-          <i class="fas fa-image" aria-hidden="true"></i>
-          <span class="history-gallery-slot-label"></span>
-        </div>
-        <figcaption>Ganti dengan dokumentasi resmi</figcaption>
-      </figure>
-    </template>
   </main>
 
   <footer class="footer">
@@ -132,6 +119,6 @@
     </div>
   </footer>
 
-  <script src="js/history.js?v=7"></script>
+  <script src="js/history.js?v=10"></script>
 </body>
 </html>
