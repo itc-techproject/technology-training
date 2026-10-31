@@ -136,7 +136,7 @@
   padding-top: 22px;
 }
 
-.history-marker span {
+.history-year-button {
   display: grid;
   width: 62px;
   height: 62px;
@@ -146,8 +146,24 @@
   background: #241a20;
   box-shadow: 0 0 0 7px rgba(199, 112, 154, 0.08);
   color: var(--gold-accent);
+  font: inherit;
   font-size: 14px;
   font-weight: 900;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.history-year-button:hover,
+.history-year-button:focus-visible {
+  transform: scale(1.06);
+  background: #38252f;
+  box-shadow: 0 0 0 9px rgba(199, 112, 154, 0.13);
+}
+
+.history-year-button:focus-visible,
+.history-dialog-close:focus-visible {
+  outline: 2px solid var(--gold-accent);
+  outline-offset: 4px;
 }
 
 .history-card-top {
@@ -184,142 +200,137 @@
   line-height: 1.8;
 }
 
-.history-year-gallery {
+.history-dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(560px, calc(100% - 32px));
+  max-width: none;
+  max-height: min(80vh, 640px);
+  padding: 0;
+  overflow: auto;
+  border: 1px solid rgba(249, 219, 120, 0.3);
+  border-radius: 20px;
+  background: #1b151c;
+  color: var(--white);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+}
+
+.history-dialog::backdrop {
+  background: rgba(8, 6, 9, 0.78);
+  backdrop-filter: blur(5px);
+}
+
+.history-dialog-content {
   position: relative;
-  margin-top: 17px;
-  overflow-x: auto;
+  padding: 34px;
+}
+
+.history-dialog-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--white);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.history-dialog-content .history-eyebrow {
+  justify-content: flex-start;
+  margin-right: 44px;
+}
+
+.history-dialog-content .history-eyebrow span:last-child {
+  width: auto;
+  height: auto;
+  background: none;
+}
+
+.history-dialog-title {
+  margin: 20px 0 12px;
+  font-size: clamp(28px, 6vw, 40px);
+  font-weight: 900;
+}
+
+.history-dialog-title span {
+  color: var(--gold-accent);
+}
+
+.history-dialog-story,
+.history-dialog-archive p {
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.history-dialog-archive {
+  margin-top: 24px;
+  padding: 18px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 13px;
-  background: linear-gradient(180deg, #110f14, #1d171f 50%, #100e12);
-  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.55);
-  scrollbar-width: thin;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.035);
 }
 
-.history-year-gallery.is-ready {
-  overflow: hidden;
+.history-dialog-archive-heading {
+  margin-bottom: 14px;
 }
 
-.history-year-track,
-.history-year-group {
-  display: flex;
-  width: max-content;
+.history-dialog-archive-heading h3 {
+  margin-bottom: 6px;
+  color: var(--gold-accent);
+  font-size: 13px;
 }
 
-.history-year-gallery.is-ready .history-year-track {
-  animation: history-year-slide 18s linear infinite;
+.history-dialog-archive-heading p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 11px;
+  line-height: 1.7;
 }
 
-.history-year-gallery:hover .history-year-track,
-.history-year-gallery:focus-within .history-year-track {
-  animation-play-state: paused;
-}
-
-.history-year-group {
-  flex: 0 0 auto;
+.history-dialog-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
-  padding: 10px 5px;
 }
 
-.history-year-slide {
-  flex: 0 0 210px;
-  width: 210px;
+.history-gallery-slot {
+  min-width: 0;
   margin: 0;
 }
 
-.history-year-photo {
-  position: relative;
+.history-gallery-placeholder {
   display: flex;
-  height: 130px;
+  min-height: 100px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.17);
+  border: 1px dashed rgba(249, 219, 120, 0.38);
   border-radius: 10px;
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 9px;
-  font-weight: 600;
+  background: linear-gradient(145deg, rgba(149, 51, 166, 0.16), rgba(199, 112, 154, 0.08));
+  color: rgba(226, 216, 230, 0.8);
+  font-size: 10px;
   text-align: center;
 }
 
-.history-year-photo::after {
-  position: absolute;
-  right: -45px;
-  bottom: -75px;
-  width: 150px;
-  height: 150px;
-  border: 1px solid rgba(255, 255, 255, 0.13);
-  border-radius: 50%;
-  content: "";
-  pointer-events: none;
-}
-
-.history-year-photo > img {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.history-year-photo > i,
-.history-year-photo > span {
-  position: relative;
-  z-index: 1;
-}
-
-.history-year-photo > i {
+.history-gallery-placeholder i {
   color: var(--gold-accent);
   font-size: 20px;
 }
 
-.history-media-purple {
-  background: linear-gradient(145deg, rgba(149, 51, 166, 0.35), rgba(40, 23, 44, 0.82));
-}
-
-.history-media-pink {
-  background: linear-gradient(145deg, rgba(199, 112, 154, 0.3), rgba(52, 28, 41, 0.85));
-}
-
-.history-media-gold {
-  background: linear-gradient(145deg, rgba(249, 219, 120, 0.17), rgba(43, 33, 28, 0.9));
-}
-
-.history-card-hint {
-  display: flex;
-  align-items: flex-start;
-  gap: 7px;
-  margin-top: 12px;
-  color: rgba(226, 216, 230, 0.62);
+.history-gallery-slot figcaption {
+  margin-top: 5px;
+  color: rgba(226, 216, 230, 0.58);
   font-size: 9px;
-  line-height: 1.6;
-}
-
-.history-card-hint i {
-  margin-top: 2px;
-  color: var(--gold-accent);
-}
-
-.history-note {
-  display: flex;
-  max-width: 650px;
-  align-items: flex-start;
-  gap: 9px;
-  margin: 12px auto 0;
-  color: rgba(226, 216, 230, 0.8);
-  font-size: 10px;
-  line-height: 1.7;
-}
-
-.history-note i {
-  margin-top: 3px;
-  color: var(--gold-accent);
-}
-
-@keyframes history-year-slide {
-  to { transform: translateX(-50%); }
+  text-align: center;
 }
 
 @media (max-width: 700px) {
@@ -329,15 +340,6 @@
 
   .history-intro {
     padding-bottom: 36px;
-  }
-
-  .history-year-slide {
-    flex-basis: min(68vw, 210px);
-    width: min(68vw, 210px);
-  }
-
-  .history-year-photo {
-    height: 120px;
   }
 
   .history-timeline {
@@ -367,10 +369,22 @@
     padding-top: 18px;
   }
 
-  .history-marker span {
+  .history-year-button {
     width: 48px;
     height: 48px;
     font-size: 11px;
+  }
+
+  .history-dialog-content {
+    padding: 28px 22px;
+  }
+
+  .history-dialog-archive {
+    padding: 14px;
+  }
+
+  .history-gallery-placeholder {
+    min-height: 86px;
   }
 }
 
@@ -379,7 +393,7 @@
     transition: none;
   }
 
-  .history-year-gallery.is-ready .history-year-track {
-    animation: none;
+  .history-year-button {
+    transition: none;
   }
 }

@@ -24,18 +24,42 @@ if (historyEntries.length && 'IntersectionObserver' in window && !prefersReduced
   historyEntries.forEach((entry) => historyObserver.observe(entry));
 }
 
-const historyYearGalleries = document.querySelectorAll('.history-year-gallery');
+const historyDialog = document.getElementById('history-dialog');
+const historyYearButtons = document.querySelectorAll('.history-year-button');
 
-if (!prefersReducedMotion) {
-  historyYearGalleries.forEach((gallery) => {
-    const track = gallery.querySelector('.history-year-track');
-    const group = track ? track.querySelector('.history-year-group') : null;
+if (historyDialog instanceof HTMLDialogElement) {
+  const dialogYear = document.getElementById('history-dialog-year');
+  const dialogEdition = document.getElementById('history-dialog-edition');
+  const dialogStory = document.getElementById('history-dialog-story');
+  const dialogArchive = document.getElementById('history-dialog-archive');
+  const dialogGallery = document.getElementById('history-dialog-gallery');
+  const galleryTemplate = document.getElementById('history-gallery-template');
+  const closeDialogButton = historyDialog.querySelector('.history-dialog-close');
 
-    if (track && group) {
-      const loopGroup = group.cloneNode(true);
-      loopGroup.setAttribute('aria-hidden', 'true');
-      track.appendChild(loopGroup);
-      gallery.classList.add('is-ready');
-    }
+  historyYearButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      if (!dialogYear || !dialogEdition || !dialogStory || !dialogArchive || !dialogGallery || !(galleryTemplate instanceof HTMLTemplateElement)) return;
+
+      dialogYear.textContent = button.dataset.year || '';
+      dialogEdition.textContent = button.dataset.edition || 'ARSIP TETRA';
+      dialogStory.textContent = button.dataset.story || '';
+      dialogArchive.textContent = button.dataset.archive || '';
+      dialogGallery.replaceChildren();
+
+      for (let slot = 1; slot <= 4; slot += 1) {
+        const gallerySlot = galleryTemplate.content.cloneNode(true);
+        const label = gallerySlot.querySelector('.history-gallery-slot-label');
+
+        if (label) label.textContent = `Slot foto 0${slot}`;
+        dialogGallery.appendChild(gallerySlot);
+      }
+
+      historyDialog.showModal();
+    });
+  });
+
+  closeDialogButton?.addEventListener('click', () => historyDialog.close());
+  historyDialog.addEventListener('click', (event) => {
+    if (event.target === historyDialog) historyDialog.close();
   });
 }
